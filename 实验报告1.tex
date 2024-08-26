@@ -1,0 +1,179 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{color}
+
+
+
+\begin{document}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=2]{0.jpg}
+  
+    \end{figure}
+    \begin{center}
+    \heiti\zihao{0} 实验报告
+    \end{center}
+    \begin{center}
+        \begin{tabular}{ll}
+         \heiti\zihao{2} 姓名: 陈培诺\\
+         \heiti\zihao{2}学号: 23160001003\\
+         \heiti\zihao{2}时间: 2024年8月26日
+    \end{tabular}
+\end{center}
+
+
+\newpage
+
+\section{学习收获}
+\subsection{版本控制git}
+\begin{enumerate}
+    \item {\large git config}
+    \begin{itemize}
+    \item{配置修改用户名及邮箱 git config --global user.name "xxx"或git config -- global user.email "xxx"}
+    \end{itemize}
+    \item{\large git status}
+    \begin{itemize}
+      \item 查看相关文件的状态(位于工作区，暂存区或者版本区)
+    \end{itemize}
+    \item{\large git commit}
+    \begin{itemize}
+      \item 将处于暂存区的文件提交至版本区中，git commit -m "提交的说明" 
+    \end{itemize}
+  \item{\large git reset --soft}
+    \begin{itemize}
+      \item 把该版本号提交的内容从暂存区位置回滚到工作区位置 git reset --soft "版本号" 
+    \end{itemize}
+    \item{\large git reset --hard}
+    \begin{itemize}
+      \item 把该版本号提交的内容从版本区位置回滚到工作区位置 git reset --hard "版本号" 
+    \end{itemize}
+    \item{\large git reset --mixed}
+    \begin{itemize}
+      \item 把该版本号提交的内容从版本区位置回滚到暂存区位置 git reset --mixed "版本号" 
+    \end{itemize}
+    \item{\large git add}
+    \begin{itemize}
+      \item 将工作区的文件提交至暂存区中，git add "文件名"\\git add .将之前的所有未提交到到暂存区的文件提交至暂存区
+    \end{itemize}
+    \newpage
+    \item {\large git init} 
+    \begin{itemize}
+      \item 初始化一个Git仓库 
+    \end{itemize}
+    \item {\large git clone url}
+    \begin{itemize}
+      \item 克隆远程版本库\quad其中url为git仓库地址
+    \end{itemize}
+    \item {\large git log}
+    \begin{itemize}
+      \item 查看历史提交记录
+    \end{itemize}
+    \item {\large git branch}
+    \begin{itemize}
+      \item 显示所有本地分支
+    \end{itemize}
+    \item {\large git branch "name"}
+    \begin{itemize}
+      \item 创建新分支，并命名
+    \end{itemize}
+    \item {\large git branch -d"name"}
+    \begin{itemize}
+      \item 删除指定分支
+    \end{itemize}
+    \item {\large git checkout"branch name"}
+    \begin{itemize}
+      \item 切换到指定分支
+    \end{itemize}
+    \item {\large git merge "branch name"}
+    \begin{itemize}
+      \item 合并指定分支至当前分支
+    \end{itemize}
+    \item {\large git rebase "branch name"}
+    \begin{itemize}
+      \item 衍合指定分支到当前分支
+    \end{itemize}
+    \item {\large git remote "xxx"}
+    \begin{itemize}
+      \item 查看远程版本库信息
+    \end{itemize}
+    \newpage
+    \item {\large git tag}
+    \begin{itemize}
+      \item 列出所有本地标签
+    \end{itemize}
+    \item {\large git tag "tagname"}
+    \begin{itemize}
+      \item 基于最新提交创建标签
+    \end{itemize}
+    \item {\large git tag -d "tagname"}
+    \begin{itemize}
+      \item 删除指定标签
+    \end{itemize}
+\end{enumerate}
+\subsection{latex排版}
+\begin{enumerate}
+    \item {\large 表格设计}
+    \begin{itemize}
+        \item 
+        \begin{tabular}{|c|c|c|}
+        \hline \textbf{a}&\textbf{b}&\textbf{c}\\
+        \hline 1 & 2 & 3\\
+        \hline 4 & 5 & 6\\
+        \hline 7 & 8 & 9\\
+        \hline
+        \end{tabular}
+      \end{itemize}
+      \item{\large 字体控制}
+      \begin{itemize}
+        \item 字体颜色
+        \begin{center}
+            \item {\color{red}abcdefg}
+            \item {\heiti 陈培诺(黑体字)}
+          \end{center}
+        \item 字体背景颜色
+        \begin{center}
+            \item \colorbox{green}{\color{red}abcdef}
+          \end{center}
+        \newpage
+        \item 字体标注下划线
+        \begin{center}
+            \underline{abcdefg}
+        \end{center}
+        \item 加粗
+        \begin{center}
+            \textbf{陈培诺}
+        \end{center}
+     
+      \end{itemize}
+      \item {\large 数学公式}
+      \begin{itemize}
+        \item eg1:
+        \begin{equation}
+        \alpha^2+\beta^2=\gamma^2
+      \end{equation}
+      \item eg2:
+      \begin{equation}
+        F(x)=
+        \begin{cases}
+        10&,\text{if $x<0$}\\
+        100&,\text{if $x=0$}\\
+        x+10&,\text{if $x>0$}
+        \end{cases}
+      \end{equation}
+      \end{itemize}
+      \item{\large 文献引用}
+      \begin{itemize}
+        \item I am a boy\cite{1}
+      \end{itemize}
+      \begin{thebibliography}{99}
+        \bibitem{1} {http://www.latexstudio.net/}
+      \end{thebibliography}
+    \end{enumerate}
+    \subsection{创建github仓库}
+    https://github.com/cpn-cyber/-.git
+    \section{学习心得}
+    通过这次课程的学习，首先我深深体会到git管理版本的优势，不用像以前那样傻傻的复制原文件，而且学会这项技能也有助于未来在公司管理项目，再来是latex，以前的我只会用word写文章，排版耗时且不美观，如今学会了更加先进的工具 latex，对我未来完成科研论文以及毕业论文奠定了基础，
+    当然我现在只是初步入门这些工具，在学习的过程中也遇到了许多问题如latex排版命令行的陌生，字体大小控制不熟练等等问题，在今后我会深入学习git和latex相关的知识，不断提高我对相关命令行的熟悉程度。
+\end{document}
