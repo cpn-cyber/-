@@ -1,0 +1,188 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{color}
+
+
+
+\begin{document}
+    
+        \begin{figure}[htp]
+            \centering
+            \includegraphics[scale=1]{1.jpg}
+        \end{figure}
+        
+        \begin{center}
+            \kaishu\zihao{1} 实验报告二
+            \end{center}
+            \begin{center}
+                \begin{tabular}{ll}
+                    \kaishu\zihao{2} 课程: 系统开发工具基础\\
+                    \kaishu\zihao{2} 姓名: 陈培诺\\
+                    \kaishu\zihao{2} 学号: 23160001003\\
+                    \kaishu\zihao{2} 时间: 2024年8月30日\\
+                \end{tabular}
+        \end{center}
+    \pagenumbering{arabic}
+    \tableofcontents
+    \newpage
+  
+   
+    \section{Shell 工具和脚本}
+   \subsection{实例1: find命令}
+\noindent find命令的一般形式为:find pathname -options [-print -exec -ok ...]\\
+find命令的参数:\\
+pathname: find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录\\
+-print: find命令将匹配的文件输出到标准输出\\
+-ok: 和-exec的作用相同,只不过以一种更为安全的模式来执行该参数所给出的shell命令,在执行每一个命令之前，都会给出提示，让用户来确定是否执行\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{2.jpg}
+    \caption{实例1}
+  \end{figure}
+
+  \subsection{实例2: man命令}
+  通过man指令可以查看shell中的指令帮助、配置文件帮助和编程帮助等信息\\
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{3.jpg}
+    \caption{实例2 man命令获取gedit的信息}
+  \end{figure}
+  \subsection{实例3: 脚本计算1-100奇数和}
+  思路: 定义一个变量来保存奇数的和 (sum=0)
+  找出1-100的奇数，保存到另一个变量里 (i=遍历出来的奇数)
+  从1-100中找出奇数后,再相加,然后将和赋值给变量 (循环变量 for) 遍历完毕后,将sum的值打印出来
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{4.jpg}
+    \caption{实例3 shell脚本内容}
+  \end{figure}
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{5.jpg}
+    \caption{实例3 shell脚本执行:结果为2500}
+  \end{figure}
+
+  \subsection{实例4: shell脚本判断所输整数是否为质数}
+  思路: 让用户输入一个数,保存到一个变量里,如果能被其他数整除就不是质数
+  如果输入的数是1或者2取模根据上面判断又不符合,所以先排除1和2
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{7.jpg}
+    \caption{实例4 shell脚本内容}
+  \end{figure}
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{6.jpg}
+    \caption{实例4 shell脚本执行结果}
+  \end{figure}
+
+  \subsection{实例5: touch命令创建文本}
+形式为touch xxx.后缀 如 touch abc.txt 创建一个文件名为abc的文本\\
+touch abc.sh 创建一个名为abc的shell脚本文件
+
+
+ \subsection{实例6: ls命令}
+ ls命令可以查看指定目录下包含哪些文件
+ \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{8.jpg}
+    \caption{实例6 查看test1这一目录下有哪些文件}
+  \end{figure}
+
+  \subsection{实例7: pwd命令}
+  pwd命令可以查看当前所处文件位置
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{9.jpg}
+    \caption{实例7 pwd路径查询结果}
+  \end{figure}
+  \subsection{实例8: cat命令}
+  cat命令可以显示文本内容
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{10.jpg}
+    \caption{实例9 cat显示test1文本内容}
+  \end{figure}
+  \subsection{cp命令拷贝文件}
+\noindent 复制文件：将一个或多个文件复制到指定的目标位置,
+  例如: cp file1.txt file2.txt将file1.txt复制为file2.txt\\
+复制目录：使用-r选项可以递归复制整个目录及其子目录,
+例如: cp -r dir1 dir2将dir1目录及其所有子目录和文件复制到dir2目录
+
+\subsection{实例10: shell脚本输出九九乘法表}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{11.jpg}
+    \caption{实例10 shell脚本内容}
+  \end{figure}
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{12.jpg}
+    \caption{实例10 shell脚本执行结果}
+  \end{figure}
+\section{vim文本编辑器}
+\subsection{实例11 vi/vim}
+通过vi/vim +文件路径 即可进入编辑文件状态
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{13.jpg}
+    \caption{实例11 vi/vim进入编辑}
+  \end{figure}
+  \subsection{实例12: 插入模式}
+  输入i即可在光标位置开始输入文本
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{14.jpg}
+    \caption{实例12 输入HELLO WORLD}
+  \end{figure}
+  \subsection{实例13: wq指令}
+  使用wq指令即可实现 保存文件并退出
+  \subsection{实例14: 删除字符}
+  键盘输入x即可删除当前光标的字符
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{15.jpg}
+    \caption{实例14 删除"虽"这一字符}
+  \end{figure}
+  \subsection{实例15: 撤销上一次操作}
+  键盘输入u即可撤销上一次操作
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{16.jpg}
+    \caption{实例15 撤销删除"虽"的操作}
+    \end{figure}
+    \subsection{实例16: 进入底线命令模式}
+    键盘输入"-"即可进入底线命令模式
+    \subsection{实例17: 从编辑模式切换命令模式}
+    若输入了i进入编辑模式,想切换回命令模式,输入ESC即可
+    \subsection{实例18: 统计文件字符数}
+    键盘输入wc -m +文件名 即可统计文件字符数
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1\textwidth]{17.jpg}
+        \caption{实例18 统计abc.txt文件 字符数为 348}
+      \end{figure}
+    \subsection{实例19: 粘贴}
+    在命令模式下输入P即可实现粘贴
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1\textwidth]{18.jpg}
+        \caption{实例19 将原来的内容粘贴了一次}
+      \end{figure}
+    \subsection{实例20: 四个退出指令的区别}
+    \noindent :q  当vim进入文件没有对文件内容做任何操作可以按"q"退出 \\
+    :q!  当vim进入文件对文件内容有操作但不想保存退出 \\
+    :wq  正常保存退出 \\
+    :wq! 强行保存退出,只针对与root用户或文件所有人生效 
+    \section{git仓库链接}
+    https://github.com/cpn-cyber/-.git
+    \section{学习心得}
+    经过这次实验，我系统学习了shell工具及其脚本,vim编辑器并了解了数据整理方法，通过以上二十个实例，也有助于我巩固对这些知识的掌握
+    \par
+    在shell中我认为我对for循环这块知识还不够熟练，还需继续练习其编程题。而在vim编辑中我需要要牢牢记住那些重要的命令
+    \par
+    这节课只是初步学习这些知识，在今后我还得继续深入学习shell工具以及脚本，为我以后做相关开发奠定基础
+  \end{document}
