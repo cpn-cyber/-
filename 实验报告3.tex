@@ -1,0 +1,239 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{color}
+
+
+
+\begin{document}
+    
+        \begin{figure}[htp]
+            \centering
+            \includegraphics[scale=1]{1.jpg}
+        \end{figure}
+        
+        \begin{center}
+            \kaishu\zihao{1} 实验报告三
+            \end{center}
+            \begin{center}
+                \begin{tabular}{ll}
+                    \kaishu\zihao{2} 课程: 系统开发工具基础\\
+                    \kaishu\zihao{2} 姓名: 陈培诺\\
+                    \kaishu\zihao{2} 学号: 23160001003\\
+                    \kaishu\zihao{2} 时间: 2024年9月10日\\
+                \end{tabular}
+        \end{center}
+    \pagenumbering{arabic}
+    \tableofcontents
+    \newpage
+  
+   
+    \section{命令行环境}
+   \subsection{实例1: session的创建 查看 重命名 关闭等命令}
+        \noindent 创建名称为test的session:  tmux new -s test \\
+        退出当前session: tmux detach\\
+        查看session:  tmux ls\\
+        进入session: tmux a -t test \\
+        重命名为test1: tmux rename -t test test1 \\
+        关闭session:  tmux kill-session -t test
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{2.jpg}
+          \caption{实例1 }
+        \end{figure}
+        \newpage
+        \subsection{实例2: window的创建 查看 重命名 关闭等命令}
+        \noindent 创建名称为abc的window:  tmux new-window -n abc\\
+        重命名为test1: tmux rename-window -t def hij \\
+        关闭session:  tmux kill-window -t abc
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{3.jpg}
+          \caption{实例2 }
+        \end{figure}
+        \newpage
+        \subsection{实例3: 切割窗口}
+        \noindent 水平切割窗口: tmux split-window
+        竖直切割窗口: tmux split-window -h
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{4.jpg}
+          \caption{实例3: 水平切割窗口 }
+        \end{figure}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{5.jpg}
+          \caption{实例3: 竖直切割窗口 }
+        \end{figure}
+        \subsection{实例4: alias起别名}
+        \noindent 创建vim的别名为v: alias v="vim"\\
+        查看别名v的定义: alias v
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{6.jpg}
+          \caption{实例4: 定义及查看别名 }
+        \end{figure}
+        \subsection{实例5: 生成ssh秘钥}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{7.jpg}
+          \caption{实例5: 创建ssh秘钥 }
+        \end{figure}
+        \newpage
+        \section{Python基础}
+        \subsection{实例6: 调用turtle库 绘制六边形}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{8.jpg}
+          \caption{实例6: 绘制六边形代码 }
+        \end{figure}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{9.jpg}
+          \caption{实例6: 六边形效果图 }
+        \end{figure}
+        \newpage
+        \subsection{实例7: 实现递归}
+        阶乘的计算需要用到递归思想
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{10.jpg}
+          \caption{实例7: 源代码 }
+        \end{figure}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{11.jpg}
+          \caption{实例7: 效果图 }
+        \end{figure}
+        \newpage
+        \subsection{实例8: 排序}
+        \noindent 首先创建一个列表ls = [2, 5, 4, 1, 3]\\
+        升序:\\
+        ls.sort()\\
+        print("升序排列后的列表：", ls)\\
+        降序:\\
+        ls.sort(reverse=True)\\
+        print("降序排列后的列表：", ls)
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{12.jpg}
+          \caption{实例8: 结果 }
+        \end{figure}
+        \subsection{实例9: 列表的比较}
+        \noindent 列表之间进行比较，以相同的下标进行比较，如果值相同则比较下一组元素，如果值不同则直接出结果\\
+        例如 ls = [2, 5, 4, 1, 3]
+        ab = [6, 8, 9, 11, 2]\\
+        由于2小于6 所以返回True
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{13.jpg}
+          \caption{实例9: 比较 }
+        \end{figure}
+        \subsection{实例10: 元组与列表的转换}
+        \noindent a=(1,2,3,4,5)\\
+        b=list(a) 将元组转换成列表\\
+        c=tuple(b) 将列表转换成元组\\
+        print(b,c)
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{14.jpg}
+          \caption{实例10: 元组和列表 }
+        \end{figure}
+        \subsection{实例11: 返回字典中的所有值}
+        \noindent d=\{'a':1,'b':2,'c':5\}\\
+        c=d.values()\\
+        print(list(c))
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{15.jpg}
+          \caption{实例11: 结果 }
+        \end{figure}
+        \subsection{实例12: while的循环}
+        \noindent for循环在Python的语法跟c语言的语法不太一样\\
+        例如要求1加到10\\
+        sum=0\\
+        for i in range(1,11)\\
+        sum+=i\\
+        print(sum)\\
+        其中range括号里是左闭右开
+        \newpage
+        \subsection{实例13: 字符串大小写}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{16.jpg}
+          \caption{实例13: upper为大写 lower为小写 }
+        \end{figure}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{17.jpg}
+          \caption{实例13: 结果}
+        \end{figure}
+        \subsection{实例14:转移字符}
+        \noindent $\backslash$n是换行符\\
+        $\backslash$'是单引号\\
+        $\backslash$"是双引号\\
+        $\backslash$$\backslash$是$\backslash$
+        \subsection{实例15: 文件的读写}
+        \noindent open("xxx.txt","w",encoding="UTF-8")\\
+        第一个表示文件地址，第二个表示打开文件方式，w是只写的方式打开，r是表示以只读的方式打开，第三个表示文件的编码方式
+        \subsection{实例16: 猜数游戏}
+        调用random随机库
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{18.jpg}
+          \caption{实例16}
+        \end{figure}
+       
+        \subsection{实例17: 类和对象}
+        定义一个student类 wo是对象
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{19.jpg}
+          \caption{实例17}
+        \end{figure}
+        \subsection{实例18: 多行输出}
+        三个引号即可实现多行输出
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{20.jpg}
+          \caption{实例18}
+        \end{figure}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{21.jpg}
+          \caption{实例18}
+        \end{figure}
+        \newpage
+        \section{Python视觉应用}
+        \subsection{实例19: 绘制图像点线}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{22.jpg}
+          \caption{实例19}
+        \end{figure}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{23.jpg}
+          \caption{实例19}
+        \end{figure}
+        \newpage
+        \newpage
+        \subsection{实例20: 绘制图像直方图}
+        \noindent figure()\\
+        hist(im.flatten(),128)
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=1\textwidth]{24.jpg}
+          \caption{实例20}
+        \end{figure}
+        \newpage
+        \section{git仓库链接}
+        https://github.com/cpn-cyber/-.git
+        \section{学习心得}
+        经过这次实验，我系统学习了命令行环境,python基础并了解了python视觉应用，通过以上二十个实例，也有助于我巩固对这些知识的掌握
+
+        \par
+        这节课只是初步学习这些知识，在今后我还得继续深入学习python，为我以后做相关开发奠定基础
+      \end{document}
+      \end{document}
