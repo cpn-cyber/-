@@ -1,0 +1,210 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{color}
+
+
+
+\begin{document}
+    
+        \begin{figure}[htp]
+            \centering
+            \includegraphics[scale=1]{1.jpg}
+        \end{figure}
+        
+        \begin{center}
+            \kaishu\zihao{1} 实验报告四
+            \end{center}
+            \begin{center}
+                \begin{tabular}{ll}
+                    \kaishu\zihao{2} 课程: 系统开发工具基础\\
+                    \kaishu\zihao{2} 姓名: 陈培诺\\
+                    \kaishu\zihao{2} 学号: 23160001003\\
+                    \kaishu\zihao{2} 时间: 2024年9月15日\\
+                \end{tabular}
+        \end{center}
+    \pagenumbering{arabic}
+    \tableofcontents
+    \newpage
+    \section{调试与性能分析}
+        \subsection{实例1: pdb调试器}
+        l- 显示当前行附近的 11 行或继续执行之前的显示\par
+        s- 执行当前行，并在第一个可能的地方停止\par
+        n- 继续执行直到当前函数的下一条语句或者 return 语句\par
+        b- 设置断点（基于传入的参数）\par
+        p- 在当前上下文对表达式求值并打印结果\par
+        r- 继续执行直到当前函数返回\par
+        q- 退出调试器
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{2.jpg}
+            \caption{实例1: pdb调试器调用 }
+          \end{figure}
+        \subsection{实例2: 打印调试}
+        调试最简单的方式就是打印输出，而print函数就可以输出各种类型变量，配合着格式化输出，我们可以打印出程序运行过程中各个变量的状态值。\par
+        例如下面这个例子
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{3.jpg}
+            \caption{实例2: 打印调试 }
+          \end{figure}
+          \par
+          使用这种方式的好处是我们不需要引入其它包，我们只需要使用简单的print就可以调试我们的程序，当然，它的缺点也很明显，有时候为了调试一些变量，我们不得不写很多print语句，而且有时候为了更优雅地显示数据，我们不得不写很多代码。
+          \subsection{实例3: 日志调试}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{4.jpg}
+            \caption{实例3: 日志调试 }
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{5.jpg}
+            \caption{实例3: 日志调试 }
+          \end{figure}
+          
+          \subsection{实例4: 计时}
+          调用time内的函数
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{6.jpg}
+            \caption{实例4: 计时 }
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{7.jpg}
+            \caption{实例4: 计时 }
+          \end{figure}
+          \subsection{实例5: shellcheck分析程序错误原因}
+          shellcheck+文件名即可得到程序错误原因
+          \section{元编程}
+          \subsection{实例6: makefile}
+          目标:即要生成的文件，如果目标文件的更新时间晚于依赖文件更新时间，则说明依赖文件没有改动，目标文件不需要重新编译。否则会进行重新编译并更新目标文件。
+          默认情况下Makefile的第一个目标为终极目标。\par
+          依赖：即目标文件由哪些文件生成。\par
+          命令：即通过执行命令由依赖文件生成目标文件。注意每条命令之前必须有一个tab(此文档编辑器默认是空格，复制下来的代码需要把命令代码的缩进改为tab制表符)保持缩进，这是语法要求（会有一些编辑工具默认tab为4个空格，会造成Makefile语法错误）。
+          \section{pytorch}
+          \subsection{实例7: 创建张量}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{8.jpg}
+            \caption{实例7: 创建张量 }
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{9.jpg}
+            \caption{实例7: 创建张量 }
+          \end{figure}
+    
+          \subsection{实例8: 张量的运算}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{10.jpg}
+            \caption{实例8: 张量加法}
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{11.jpg}
+            \caption{实例8: 张量加法}
+          \end{figure}
+          \newpage
+          \subsection{实例9: 随机生成矩阵}
+          随机生成一个3行3列矩阵
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{12.jpg}
+            \caption{实例9: 随机矩阵}
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{13.jpg}
+            \caption{实例9: 随机矩阵}
+          \end{figure}
+          \subsection{实例10: 全零矩阵}
+          创建三行三列所有值为0的整型矩阵
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{14.jpg}
+            \caption{实例10: 0矩阵}
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{15.jpg}
+            \caption{实例10: 0矩阵}
+          \end{figure}
+          \subsection{实例11: 张量的属性}
+          张量的属性包括形状，数据类型和存储设备等
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{16.jpg}
+            \caption{实例11: 属性}
+          \end{figure}
+          \subsection{实例12: 张量的操作}
+          PyTorch中有100 多种张量运算，包括算术、线性代数、矩阵操作（转置、索引、切片）、采样等，而且这些操作中都可以在 GPU 上运行（通常以比 CPU 更高的速度）。\par
+默认情况下，张量是在 CPU 上创建的。我们需要使用 .to方法明确地将张量移动到 GPU（在检查 GPU 可用性之后）。
+          \newpage
+          \subsection{实例13: 张量转变为numpy数组}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{17.jpg}
+            \caption{实例13}
+          \end{figure}
+          \subsection{实例14: 构建神经网络}
+          我们首先定义了一个Net类，这个类继承自nn.Module。然后在init方法中定义了网络的结构，在forward方法中定义了数据的流向。在网络的构建过程中，我们可以使用任何tensor操作。\par
+需要注意的是，backward函数（用于计算梯度）会被autograd自动创建和实现。你只需要在nn.Module的子类中定义forward函数。\par
+在创建好神经网络后，我们可以使用net.parameters()方法来返回网络的可学习参数。\par
+          \newpage
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{18.jpg}
+            \caption{实例14}
+          \end{figure}
+        \subsection{实例15: Dataloader介绍}
+        \noindent DataLoader类提供了对数据集的并行加载，可以有效地加载大量数据，并提供了多种数据采样方式。常用的参数有：\par
+dataset：加载的数据集（Dataset对象）\par
+
+batch-size：batch大小\par
+
+shuffle：是否每个epoch时都打乱数据\par
+
+num-workers：使用多进程加载的进程数，0表示不使用多进程
+          \subsection{实例16: 张量的合并}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{19.jpg}
+            \caption{实例16}
+          \end{figure}
+          \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth]{20.jpg}
+            \caption{实例16}
+          \end{figure}
+          \subsection{实例17: 张量广播运算}
+          即使形状不同，仍然可以通过调用广播机制(broadcasting mechanism) 来执行按元素操作。
+            就是说当矩阵的形式不符合相加的要求时会自动补齐，并进行相加。
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=1\textwidth]{21.jpg}
+                \caption{实例17}
+              \end{figure}
+              \section{大杂烩}
+              \subsection{实例18: API}
+              \noindent API 是应用程序编程接口,Pytorch使用Tensorboard主要用到了三个API：\par
+              SummaryWriter：这个用来创建一个log文件，TensorBoard面板查看时，也是需要选择查看那个log文件。\par
+              add-something： 向log文件里面增添数据。例如可以通过add-scalar增添折线图数据，add-image可以增添图片。\par
+              close：当训练结束后，我们可以通过close方法结束log写入
+              \subsection{实例19: VPN}
+              \noindent VPN指依靠ISP或其他NSP在公用网络基础设施之上构建的专用的安全数据通信网络，只不过这个专线网络是逻辑上的而不是物理的，所以称为虚拟专用网。\par
+虚拟：用户不再需要拥有实际的长途数据线路，而是使用公共网络资源建立自己的私有网络。\par
+专用：用户可以定制最符合自身需求的网络。\par
+核心技术：隧道技术\par
+发出的流量看上去来源于 VPN 供应商的网络而不是你的“真实”地址，而你实际接入的网络只能看到加密的流量
+              \subsection{实例20: 修改键位映射}
+              推荐修改键位是因为键盘上很多不常用的功能却占用了比较方便的按键位置，例如CapsLock
+              可以在window控制面板将其修改
+              \section{git仓库链接}
+              https://github.com/cpn-cyber/-.git
+              \section{学习心得}
+              这是系统开发工具基础最后一节课，也是收获满满，学习了如pytorch等干货知识，在这四节课里，我大大提升了自己对计算机领域的认知，学习了许多重要的工具，在未来也要继续深入学习，为以后做相关开发打下基础，同时也感谢老师和助教在这四节课中的辛苦付出！
+
+        \end{document}
